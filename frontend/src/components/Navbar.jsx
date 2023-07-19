@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/Logo.jpg";
 import "../styles/Navbar.scss";
 
@@ -8,12 +9,16 @@ function NavBar() {
       <img className="logo" src={Logo} alt="Logo" />
 
       <div className="buttons">
-        <button type="button" className="nav-button">
-          Pierres Naturelles
-        </button>
-        <button type="button" className="nav-button">
-          Créations Artistiques
-        </button>
+        <NavLink to="/" activeClassName="active" exact>
+          <button type="button" className="nav-button">
+            Pierres Naturelles
+          </button>
+        </NavLink>
+        <NavLink to="/creations" activeClassName="active">
+          <button type="button" className="nav-button">
+            Créations Artistiques
+          </button>
+        </NavLink>
       </div>
       <p className="nav-footer">v. 1.0</p>
     </div>

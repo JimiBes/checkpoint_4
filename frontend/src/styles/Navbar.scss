@@ -32,13 +32,21 @@
     border-radius: 50px;
     padding: 0.5rem;
     height: 3rem;
+    width: 15rem;
     color: #ffffff;
-    background-color: #0f3c4c88;
+    background-color: #071e26;
+    transition: background-color 0.3s ease;
 
     &:active {
       border: 2px solid #071e26;
       box-shadow: 0 0 10px #134b5f;
       background-color: #134b5f;
+    }
+  }
+
+  .active {
+    .nav-button {
+      background-color: #0f3c4c88;
     }
   }
 }
