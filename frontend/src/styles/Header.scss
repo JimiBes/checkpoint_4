@@ -1,0 +1,21 @@
+.header {
+  background-color: #071e26;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 20vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-bottom: #ffffff solid 2px;
+  .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 3rem;
+  }
+}

@@ -1,12 +1,12 @@
-import Home from "./pages/Home";
+import StonesPage from "./pages/StonesPage";
 
 import "./App.css";
+import "./reset.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <StonesPage />
     </div>
   );
 }
