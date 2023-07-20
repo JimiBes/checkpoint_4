@@ -1,13 +1,20 @@
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import StonesPage from "./pages/StonesPage";
+import CreationsPage from "./pages/CreationsPage";
 
 import "./App.css";
+import "./reset.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <Router>
+      <div className="app">
+        <Routes>
+          <Route path="/stones" element={<StonesPage />} />
+          <Route path="/creations" element={<CreationsPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

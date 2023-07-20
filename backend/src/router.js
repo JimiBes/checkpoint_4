@@ -2,12 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-const itemControllers = require("./controllers/itemControllers");
+const stoneControllers = require("./controllers/stoneControllers");
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+router.get("/stones", stoneControllers.getAllStones);
+router.post("/stones", stoneControllers.addStone);
+router.delete("/stones/:id", stoneControllers.deleteStone);
 
 module.exports = router;
