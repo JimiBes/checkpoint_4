@@ -6,8 +6,8 @@ class StoneManager extends AbstractManager {
   }
   insert(item) {
     return this.database.query(
-      `insert into ${this.table} (name, description, color, origin, hardness, image_url) values (?, ?, ?, ?, ?, ?)`, 
-      [item.name, item.description, item.color, item.origin, item.hardness, item.image_url]
+      `insert into ${this.table} (name, description, color, origin, hardness, composition, image_url) values (?, ?, ?, ?, ?, ?, ?)`, 
+      [item.name, item.description, item.color, item.origin, item.hardness, item.composition, item.image_url]
     );
   }
   
