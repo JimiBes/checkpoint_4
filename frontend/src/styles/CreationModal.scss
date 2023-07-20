@@ -1,0 +1,48 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.creation-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  color: #071e26;
+  font-size: 3rem;
+  bottom: 0;
+  right: 0;
+  width: 80vw;
+  height: 80vh;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+
+  .creation-modal-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px #071e26;
+    border-radius: 20px;
+    padding: 2rem;
+    gap: 2rem;
+
+    .fi-rr-hourglass-end {
+      font-size: 5rem;
+      animation: rotate 5s infinite; /* Apply the animation */
+    }
+  }
+}

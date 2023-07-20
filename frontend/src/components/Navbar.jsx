@@ -9,7 +9,7 @@ function NavBar() {
       <img className="logo" src={Logo} alt="Logo" />
 
       <div className="buttons">
-        <NavLink to="/" activeClassName="active" exact>
+        <NavLink to="/stones" activeClassName="active" exact="true">
           <button type="button" className="nav-button">
             Pierres Naturelles
           </button>

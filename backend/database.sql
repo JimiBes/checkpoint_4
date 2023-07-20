@@ -5,7 +5,8 @@ CREATE TABLE
         description TEXT,
         color VARCHAR(255),
         origin VARCHAR(255),
-        hardness INT,
+        hardness VARCHAR(255),
+        composition VARCHAR(255),
         image_url VARCHAR(255),
         PRIMARY KEY(id)
     );
@@ -27,48 +28,55 @@ INSERT INTO
         color,
         origin,
         hardness,
+        composition,
         image_url
     )
 VALUES (
-        'Ruby',
-        'A red precious gemstone that is one of the traditional cardinal gems.',
-        'Red',
+        'Rubis',
+        'Une précieuse gemme rouge qui est l''un des traditionnels "joyaux cardinaux".',
+        'Rouge',
         'Myanmar',
         9,
+        'Oxyde de chrome',
         'https://www.123ambre.com/wp-content/uploads/2021/05/rubis-pierre.jpg'
     ), (
-        'Emerald',
-        'A green variety of beryl, a mineral species that also includes aquamarine.',
-        'Green',
-        'Colombia',
+        'Émeraude',
+        'Une variété verte de béryl, une espèce minérale qui inclut également l''aigue-marine.',
+        'Vert',
+        'Colombie',
         7.5,
+        'Chrome, Vanadium, Fer',
         'https://www.123ambre.com/wp-content/uploads/2021/06/emeraude.jpg'
     ), (
-        'Diamond',
-        'The hardest known natural material and is often used in industrial cutting and drilling tools.',
-        'Clear',
-        'South Africa',
+        'Diamant',
+        'Le matériau naturel le plus dur connu et est souvent utilisé dans les outils industriels de coupe et de forage.',
+        'Transparent',
+        'Afrique du Sud',
         10,
+        'Carbone pur',
         'https://www.123ambre.com/wp-content/uploads/2021/04/diamant-pierre.jpg'
     ), (
-        'Sapphire',
-        'Typically blue, but natural fancy sapphires also occur in yellow, purple, orange, and green colors.',
-        'Blue',
+        'Saphir',
+        'Typiquement bleu, mais les saphirs naturels fantaisie se présentent également en jaune, violet, orange et vert.',
+        'Bleu',
         'Sri Lanka',
         9,
+        'oxyde d''aluminium, titane, fer',
         'https://www.123ambre.com/wp-content/uploads/2021/05/saphir.jpg'
     ), (
-        'Amethyst',
-        'A violet variety of quartz often used in jewelry.',
-        'Purple',
-        'Brazil',
+        'Améthyste',
+        'Une variété violette de quartz souvent utilisée en bijouterie.',
+        'Violet',
+        'Brésil',
         7,
+        'Dioxyde de silicium',
         'https://www.123ambre.com/wp-content/uploads/2020/04/pierre-amethyste.jpg'
     ), (
-        'Opal',
-        'Characterized by its unique display of flashing rainbow colors called play-of-color.',
-        'Multicolor',
-        'Australia',
+        'Opale',
+        'Caractérisée par son affichage unique de couleurs arc-en-ciel clignotantes appelé jeu de couleur.',
+        'Multicolore',
+        'Australie',
         5.5,
+        'Dioxyde de silicium hydreux',
         'https://www.123ambre.com/wp-content/uploads/2020/10/opale.jpg'
     );
