@@ -2,10 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-const stoneControllers = require("./controllers/stoneControllers");
+const consumableControllers = require("./controllers/consumableControllers");
 
-router.get("/stones", stoneControllers.getAllStones);
-router.post("/stones", stoneControllers.addStone);
-router.delete("/stones/:id", stoneControllers.deleteStone);
+router.get("/consumables", consumableControllers.getAllConsumables);
+router.post("/consumables", consumableControllers.addConsumable);
+router.delete("/consumables/:id", consumableControllers.deleteConsumable);
 
 module.exports = router;

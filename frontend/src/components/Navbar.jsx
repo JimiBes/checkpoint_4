@@ -9,14 +9,14 @@ function NavBar() {
       <img className="logo" src={Logo} alt="Logo" />
 
       <div className="buttons">
-        <NavLink to="/stones" activeClassName="active" exact="true">
+        <NavLink to="/" activeClassName="active" exact="true">
           <button type="button" className="nav-button">
-            Pierres Naturelles
+            Consommables
           </button>
         </NavLink>
         <NavLink to="/creations" activeClassName="active">
           <button type="button" className="nav-button">
-            Créations Artistiques
+            Pièces Automobile
           </button>
         </NavLink>
       </div>

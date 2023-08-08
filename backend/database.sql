@@ -1,5 +1,5 @@
 CREATE TABLE
-    IF NOT EXISTS stone (
+    IF NOT EXISTS consumable (
         id INT AUTO_INCREMENT,
         name VARCHAR(255),
         description TEXT,
@@ -22,7 +22,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    Stone (
+    consumable (
         name,
         description,
         color,

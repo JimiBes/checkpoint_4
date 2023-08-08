@@ -34,10 +34,10 @@ const ItemManager = require("./ItemManager");
 models.item = new ItemManager();
 models.item.setDatabase(pool);
 
-const StoneManager = require("./StoneManager");
+const ConsumableManager = require("./ConsumableManager");
 
-models.stone = new StoneManager();
-models.stone.setDatabase(pool);
+models.consumable = new ConsumableManager();
+models.consumable.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
