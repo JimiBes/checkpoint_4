@@ -27,12 +27,9 @@ function ConsumableModal() {
       title: "Ajouter un nouveau produit",
       html: `
         <input id="swal-input1" class="swal2-input" placeholder="Nom">
-        <input id="swal-input2" class="swal2-input" placeholder="Description">
-        <input id="swal-input3" class="swal2-input" placeholder="Couleur">
-        <input id="swal-input4" class="swal2-input" placeholder="Origine">
-        <input id="swal-input5" class="swal2-input" placeholder="Dureté">
-        <input id="swal-input6" class="swal2-input" placeholder="Composition">
-        <input id="swal-input7" class="swal2-input" placeholder="URL de l'image">
+        <input id="swal-input2" class="swal2-input" placeholder="Référence">
+        <input id="swal-input3" class="swal2-input" placeholder="Description">
+        <input id="swal-input4" class="swal2-input" placeholder="Prix">
       `,
       focusConfirm: false,
       preConfirm: () => {
@@ -41,9 +38,6 @@ function ConsumableModal() {
           document.getElementById("swal-input2").value,
           document.getElementById("swal-input3").value,
           document.getElementById("swal-input4").value,
-          document.getElementById("swal-input5").value,
-          document.getElementById("swal-input6").value,
-          document.getElementById("swal-input7").value,
         ];
         const allFieldsFilled = values.every((value) => Boolean(value));
         if (!allFieldsFilled) {
@@ -56,12 +50,9 @@ function ConsumableModal() {
         axios
           .post(`${import.meta.env.VITE_BACKEND_URL}/consumables`, {
             name: result.value[0],
-            description: result.value[1],
-            color: result.value[2],
-            origin: result.value[3],
-            hardness: result.value[4],
-            composition: result.value[5],
-            image_url: result.value[6],
+            reference: result.value[1],
+            description: result.value[2],
+            price: result.value[3],
           })
           .then(() => {
             axios
@@ -106,20 +97,6 @@ function ConsumableModal() {
     });
   };
 
-  const displayConsumable = (consumable) => {
-    Swal.fire({
-      title: consumable.name,
-      html: `
-        <p>Description: ${consumable.description}</p>
-        <p>Couleur: ${consumable.color}</p>
-        <p>Origine: ${consumable.origin}</p>
-        <p>Composition: ${consumable.composition}</p>
-        <p>Dureté: ${consumable.hardness} Mohs</p>
-        <img src="${consumable.image_url}" alt="${consumable.name}" style="width: 40vw; height: 40vh;">
-      `,
-    });
-  };
-
   return (
     <div className="consumable-modal-container">
       <div className="consumable-modal-search">
@@ -131,36 +108,40 @@ function ConsumableModal() {
         />
       </div>
       <div className="consumable-modal-list">
-        {consumables
-          .filter((consumable) =>
-            consumable.name.toLowerCase().includes(searchValue.toLowerCase())
-          )
-          .map((consumable) => (
-            <div
-              className="consumable-card"
-              key={consumable.id}
-              onClick={() => displayConsumable(consumable)}
-            >
-              <button
-                className="button-delete-consumable"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteConsumable(consumable.id);
-                }}
-              >
-                <i className="fi fi-rr-cross-circle" />
-              </button>
-              <div className="consumable-info">
-                <img
-                  className="consumable-image"
-                  src={consumable.image_url}
-                  alt={consumable.name}
-                />
-                <h2 className="consumable-name">{consumable.name}</h2>
-              </div>
-            </div>
-          ))}
+        <table className="consumable-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Référence</th>
+              <th>Description</th>
+              <th>Prix</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {consumables
+              .filter((consumable) =>
+                consumable.name
+                  .toLowerCase()
+                  .includes(searchValue.toLowerCase())
+              )
+              .map((consumable) => (
+                <tr key={consumable.id}>
+                  <td>{consumable.name}</td>
+                  <td>{consumable.reference}</td>
+                  <td>{consumable.description}</td>
+                  <td>{consumable.price} euros HT</td>
+                  <td>
+                    <button onClick={() => deleteConsumable(consumable.id)}>
+                      <i className="fi fi-rr-trash" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
       </div>
+
       <button
         className="button-add-consumable"
         type="button"
